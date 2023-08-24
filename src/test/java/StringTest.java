@@ -36,6 +36,7 @@ public class StringTest {
     }
 
     @Test
+    @DisplayName("When string is null, throw an exception")
     void lengthException() {
         String str = null;
         assertThrows(NullPointerException.class, () -> { str.length(); });
