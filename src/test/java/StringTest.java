@@ -36,6 +36,12 @@ public class StringTest {
     }
 
     @Test
+    void lengthException() {
+        String str = null;
+        assertThrows(NullPointerException.class, () -> { str.length(); });
+    }
+
+    @Test
     void toUpperCaseBasic() {
         String str = "abcd";
         String results = str.toUpperCase();
