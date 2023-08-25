@@ -4,6 +4,8 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StringTest {
@@ -70,6 +72,16 @@ public class StringTest {
     void lengthException() {
         String str = null;
         assertThrows(NullPointerException.class, () -> { str.length(); });
+    }
+
+    @Test
+    void performance() {
+        assertTimeout(Duration.ofSeconds(5), () -> {
+            for (int i = 0; i <= 1000000; i++) {
+                int j = i;
+                System.out.println(j);
+            }
+        });
     }
 
     @Test
