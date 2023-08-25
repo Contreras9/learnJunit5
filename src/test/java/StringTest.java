@@ -9,6 +9,7 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StringTest {
+    private String str;
 
     @BeforeAll
     static void beforeAll() {
@@ -110,5 +111,26 @@ public class StringTest {
         String[] actualResult = str.split(" ");
         String[] expectedResult = new String[] {"abc", "def", "ghi"};
         assertArrayEquals(expectedResult, actualResult);
+    }
+
+    @Nested
+    @DisplayName("For an empty String")
+    class EmptyStringTest {
+        @BeforeEach
+        void setToEmpty() {
+            str = "";
+        }
+
+        @Test
+        @DisplayName("length should be zero")
+        void lengthIsZero() {
+            assertEquals(0, str.length());
+        }
+
+        @Test
+        @DisplayName("upper case is empty")
+        void upperCaseIsEmpty() {
+            assertEquals("", str.toUpperCase());
+        }
     }
 }
