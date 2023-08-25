@@ -31,6 +31,7 @@ public class StringTest {
     }
 
     @Test
+    //@Disabled //@Ignored
     void lengthBasic() {
         //Write test code to create an instance of a class in here
         //Invoke the method - square(4) => Code Under Test
