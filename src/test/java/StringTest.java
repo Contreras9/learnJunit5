@@ -81,6 +81,7 @@ public class StringTest {
     }
 
     @Test
+    @RepeatedTest(10)
     void containsBasic() {
 //        String str = "abcdefgh";
 //        boolean result = str.contains("ijk");
